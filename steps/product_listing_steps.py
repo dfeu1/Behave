@@ -21,14 +21,15 @@ def step_impl(context, shoe):
     search_input.clear()
     search_input.send_keys(shoe)
     search_input.send_keys(Keys.RETURN)
+    browser.refresh()
 
 @then('I should see the first shoe in the search results')
 def step_impl(context):
     # Wait for the search results to load
-    WebDriverWait(browser, 10)
+    WebDriverWait(browser, 5)
     
     # First class in search results
     first_shoe = "product-card__img-link-overlay" # element id should go here
     result = browser.find_element(By.CLASS_NAME, first_shoe)
     result.click()
-    WebDriverWait(browser, 10)
+    WebDriverWait(browser, 5)

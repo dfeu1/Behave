@@ -9,3 +9,8 @@ Feature: Testing Search at Nike
     Given I am on the Nike website
     When When I search for "Dunks"
     Then I should see the first shoe in the search results
+
+  Scenario: Search for mens black Dunks on Nike.com
+    Given I am on the Nike website
+    When When I search for "mens black Dunks"
+    Then I should see the first shoe in the search results
